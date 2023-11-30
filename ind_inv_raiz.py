@@ -4,7 +4,7 @@ from collections import Counter
 import re
 
 archivo = "urls.txt"
-salida_txt = "ind_inv_ind.txt"
+salida_txt = "ind_inv_raiz.txt"
 
 resultados = {}
 
