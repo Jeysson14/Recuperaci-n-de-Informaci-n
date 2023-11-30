@@ -34,7 +34,7 @@ class BuscadorApp:
     def obtener_resultados(self, palabra_buscar):
         resultados = []
 
-        with open("raiz_ind_inv.txt", "r", encoding="utf-8") as file:
+        with open("ind_inv_raiz.txt", "r", encoding="utf-8") as file:
             for line in file:
                 palabra, data_str = line.split(" : ", 1)
                 try:
