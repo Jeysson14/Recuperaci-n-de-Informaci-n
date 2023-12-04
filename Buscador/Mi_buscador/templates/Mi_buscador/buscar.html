@@ -1,0 +1,23 @@
+{% extends 'Mi_buscador/base_generic.html' %}
+
+{% block content %}
+  <h1>Buscador de Palabras</h1>
+
+  <form method="post" action="{% url 'buscar' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+  </form>
+
+  {% if resultado %}
+    <h2>Resultados de la búsqueda</h2>
+    {% for res in resultado %}
+      <p>Palabra: {{ res.palabra }}</p>
+      <p>URL: {{ res.url }}</p>
+      <p>Métrica: {{ res.metrica }}</p>
+      <hr>
+    {% endfor %}
+  {% else %}
+    <p>No se encontraron resultados para la palabra buscada.</p>
+  {% endif %}
+{% endblock %}
